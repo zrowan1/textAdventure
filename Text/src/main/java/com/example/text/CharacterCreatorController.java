@@ -1,11 +1,16 @@
 package com.example.text;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 
+
+import java.io.IOException;
 
 import static com.example.text.Player.*;
 
@@ -39,36 +44,48 @@ public class CharacterCreatorController
         System.out.println(tempName);
     }
     @FXML
-    public void clickUberNerdButton(MouseEvent event)
+    public void clickUberNerdButton(MouseEvent event) throws IOException
     {
         Player.setPlayerOne(tempName);
         System.out.println(playerOne.getPlayerName()); // alleen voor testing
         Player.chooseUberNerd();
         System.out.println(playerOne.pickedClass); // alleen voor testing
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("chapterone-view.fxml"));
+        Stage stage = (Stage) uberNerdButton.getScene().getWindow();
+        stage.setScene(new Scene(fxmlLoader.load(), 700, 550 ));
     }
     @FXML
-    public void clickLinuxEliteButton(MouseEvent event)
+    public void clickLinuxEliteButton(MouseEvent event) throws IOException
     {
         Player.setPlayerOne(tempName);
         System.out.println(playerOne.getPlayerName()); // alleen voor testing
         Player.chooseLinuxElite();
         System.out.println(playerOne.pickedClass); // alleen voor testing
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("chapterone-view.fxml"));
+        Stage stage = (Stage) linuxEliteButton.getScene().getWindow();
+        stage.setScene(new Scene(fxmlLoader.load(), 700, 550));
     }
     @FXML
-    public void clickMacRichKidButton(MouseEvent event)
+    public void clickMacRichKidButton(MouseEvent event) throws IOException
     {
         Player.setPlayerOne(tempName);
         System.out.println(playerOne.getPlayerName()); // alleen voor testing
         Player.chooseMacRichKid();
         System.out.println(playerOne.pickedClass); // alleen voor testing
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("chapterone-view.fxml"));
+        Stage stage = (Stage) macRichKidButton.getScene().getWindow();
+        stage.setScene(new Scene(fxmlLoader.load(), 700, 550));
     }
     @FXML
-    public void clickNetwerkBeheerderButton(MouseEvent event)
+    public void clickNetwerkBeheerderButton(MouseEvent event) throws IOException
     {
         Player.setPlayerOne(tempName);
         System.out.println(playerOne.getPlayerName()); // alleen voor testing
         Player.chooseNetwerkBeheerder();
         System.out.println(playerOne.pickedClass); // alleen voor testing
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("chapterone-view.fxml"));
+        Stage stage = (Stage) netwerkBeheerderButton.getScene().getWindow();
+        stage.setScene(new Scene(fxmlLoader.load(), 700, 550));
     }
 
 
