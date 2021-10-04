@@ -26,7 +26,8 @@ public class GameController
         stage.close();
     }
     @FXML
-    private void useNewGameButton(MouseEvent event) throws IOException {
+    private void useNewGameButton(MouseEvent event) throws IOException
+    {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("charactercreator-view.fxml"));
         Stage stage = (Stage) newGameButton.getScene().getWindow();
         stage.setScene(new Scene(fxmlLoader.load(), 700, 550 ));

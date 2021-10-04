@@ -9,7 +9,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="550.0" prefWidth="700.0" style="-fx-background-color: #9BC9E9;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.text.ChapterOneController">
+<AnchorPane fx:id="chapterOneScene" prefHeight="550.0" prefWidth="700.0" style="-fx-background-color: #9BC9E9;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.text.ChapterOneController">
    <children>
       <MenuBar layoutY="7.0" style="-fx-background-color: grey;" AnchorPane.bottomAnchor="520.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <menus>
@@ -18,14 +18,10 @@
               <MenuItem mnemonicParsing="false" onAction="#clickViewStatsItem" text="View Stats" />
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="Edit">
+          <Menu mnemonicParsing="false" text="System">
             <items>
-              <MenuItem mnemonicParsing="false" text="Delete" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Help">
-            <items>
-              <MenuItem mnemonicParsing="false" text="About" />
+              <MenuItem fx:id="backToMainMenuItem" mnemonicParsing="false" onAction="#clickBackToMainMenuItem" text="Return To Main Menu" />
+                  <MenuItem fx:id="quitGameItem" mnemonicParsing="false" onAction="#clickQuitGameItem" text="Quit Game" />
             </items>
           </Menu>
         </menus>

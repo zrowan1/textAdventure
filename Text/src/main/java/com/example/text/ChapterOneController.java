@@ -5,7 +5,9 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Menu;
 import javafx.scene.control.MenuItem;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
@@ -28,9 +30,28 @@ public class ChapterOneController
 
     }
 
+    public void setQuitGame()
+    {
+            Stage stage = (Stage) chapterOneScene.getScene().getWindow();
+            stage.close();
+    }
+    public void setBackToMainMenu() throws IOException
+    {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("hello-view.fxml"));
+        Stage stage = (Stage) chapterOneScene.getScene().getWindow();
+        stage.setScene(new Scene(fxmlLoader.load(), 700, 550));
+    }
+
+
 
     @FXML
+    protected AnchorPane chapterOneScene;
+    @FXML
     protected MenuItem viewStats;
+    @FXML
+    protected MenuItem backToMainMenuItem;
+    @FXML
+    protected MenuItem quitGameItem;
     @FXML
     protected Pane statsPane;
     @FXML
@@ -47,6 +68,7 @@ public class ChapterOneController
     protected Button goBackButton;
 
 
+
     @FXML
     private void clickViewStatsItem(ActionEvent event)
     {
@@ -58,6 +80,17 @@ public class ChapterOneController
 
         statsPane.setOpacity(0.0);
     }
+    @FXML
+    public void clickQuitGameItem(ActionEvent event)
+    {
+        setQuitGame();
+    }
+    @FXML
+    private void clickBackToMainMenuItem(ActionEvent event) throws IOException
+    {
+        setBackToMainMenu();
+    }
+
 
 
 }
