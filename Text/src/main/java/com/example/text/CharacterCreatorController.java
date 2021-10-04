@@ -44,7 +44,7 @@ public class CharacterCreatorController
         System.out.println(tempName);
     }
     @FXML
-    public void clickUberNerdButton(MouseEvent event) throws IOException
+    private void clickUberNerdButton(MouseEvent event) throws IOException
     {
         Player.setPlayerOne(tempName);
         System.out.println(playerOne.getPlayerName()); // alleen voor testing
@@ -55,7 +55,7 @@ public class CharacterCreatorController
         stage.setScene(new Scene(fxmlLoader.load(), 700, 550 ));
     }
     @FXML
-    public void clickLinuxEliteButton(MouseEvent event) throws IOException
+    private void clickLinuxEliteButton(MouseEvent event) throws IOException
     {
         Player.setPlayerOne(tempName);
         System.out.println(playerOne.getPlayerName()); // alleen voor testing
@@ -66,7 +66,7 @@ public class CharacterCreatorController
         stage.setScene(new Scene(fxmlLoader.load(), 700, 550));
     }
     @FXML
-    public void clickMacRichKidButton(MouseEvent event) throws IOException
+    private void clickMacRichKidButton(MouseEvent event) throws IOException
     {
         Player.setPlayerOne(tempName);
         System.out.println(playerOne.getPlayerName()); // alleen voor testing
@@ -77,7 +77,7 @@ public class CharacterCreatorController
         stage.setScene(new Scene(fxmlLoader.load(), 700, 550));
     }
     @FXML
-    public void clickNetwerkBeheerderButton(MouseEvent event) throws IOException
+    private void clickNetwerkBeheerderButton(MouseEvent event) throws IOException
     {
         Player.setPlayerOne(tempName);
         System.out.println(playerOne.getPlayerName()); // alleen voor testing
