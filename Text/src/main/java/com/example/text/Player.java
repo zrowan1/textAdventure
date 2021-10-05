@@ -69,19 +69,13 @@ public class Player
         return pickedClass;
     }
 
-
-
-
-
-
-
-
-
-
     public static void setPlayerOne(String name)
     {
         Player playerOne = new Player(tempName);
     }
+
+
+
     public static void chooseUberNerd()
     {
         health = 120;
