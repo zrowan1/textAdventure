@@ -47,9 +47,7 @@ public class CharacterCreatorController
     private void clickUberNerdButton(MouseEvent event) throws IOException
     {
         Player.setPlayerOne(tempName);
-        System.out.println(playerOne.getPlayerName()); // alleen voor testing
         Player.chooseUberNerd();
-        System.out.println(playerOne.pickedClass); // alleen voor testing
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("chapterone-view.fxml"));
         Stage stage = (Stage) uberNerdButton.getScene().getWindow();
         stage.setScene(new Scene(fxmlLoader.load(), 700, 550 ));
@@ -58,9 +56,7 @@ public class CharacterCreatorController
     private void clickLinuxEliteButton(MouseEvent event) throws IOException
     {
         Player.setPlayerOne(tempName);
-        System.out.println(playerOne.getPlayerName()); // alleen voor testing
         Player.chooseLinuxElite();
-        System.out.println(playerOne.pickedClass); // alleen voor testing
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("chapterone-view.fxml"));
         Stage stage = (Stage) linuxEliteButton.getScene().getWindow();
         stage.setScene(new Scene(fxmlLoader.load(), 700, 550));
@@ -69,9 +65,7 @@ public class CharacterCreatorController
     private void clickMacRichKidButton(MouseEvent event) throws IOException
     {
         Player.setPlayerOne(tempName);
-        System.out.println(playerOne.getPlayerName()); // alleen voor testing
         Player.chooseMacRichKid();
-        System.out.println(playerOne.pickedClass); // alleen voor testing
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("chapterone-view.fxml"));
         Stage stage = (Stage) macRichKidButton.getScene().getWindow();
         stage.setScene(new Scene(fxmlLoader.load(), 700, 550));
@@ -80,9 +74,7 @@ public class CharacterCreatorController
     private void clickNetwerkBeheerderButton(MouseEvent event) throws IOException
     {
         Player.setPlayerOne(tempName);
-        System.out.println(playerOne.getPlayerName()); // alleen voor testing
         Player.chooseNetwerkBeheerder();
-        System.out.println(playerOne.pickedClass); // alleen voor testing
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("chapterone-view.fxml"));
         Stage stage = (Stage) netwerkBeheerderButton.getScene().getWindow();
         stage.setScene(new Scene(fxmlLoader.load(), 700, 550));
