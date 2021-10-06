@@ -48,7 +48,7 @@ public class CharacterCreatorController
     {
         Player.setPlayerOne(tempName);
         Player.chooseUberNerd();
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("chapterone-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("tutorial-view.fxml"));
         Stage stage = (Stage) uberNerdButton.getScene().getWindow();
         stage.setScene(new Scene(fxmlLoader.load(), 700, 550 ));
     }
@@ -57,7 +57,7 @@ public class CharacterCreatorController
     {
         Player.setPlayerOne(tempName);
         Player.chooseLinuxElite();
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("chapterone-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("tutorial-view.fxml"));
         Stage stage = (Stage) linuxEliteButton.getScene().getWindow();
         stage.setScene(new Scene(fxmlLoader.load(), 700, 550));
     }
@@ -66,7 +66,7 @@ public class CharacterCreatorController
     {
         Player.setPlayerOne(tempName);
         Player.chooseMacRichKid();
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("chapterone-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("tutorial-view.fxml"));
         Stage stage = (Stage) macRichKidButton.getScene().getWindow();
         stage.setScene(new Scene(fxmlLoader.load(), 700, 550));
     }
@@ -75,7 +75,7 @@ public class CharacterCreatorController
     {
         Player.setPlayerOne(tempName);
         Player.chooseNetwerkBeheerder();
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("chapterone-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("tutorial-view.fxml"));
         Stage stage = (Stage) netwerkBeheerderButton.getScene().getWindow();
         stage.setScene(new Scene(fxmlLoader.load(), 700, 550));
     }
