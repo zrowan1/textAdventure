@@ -8,7 +8,7 @@ enum playerItem {blackMamba, spaghetti, mountainDew, schultenbrau, racePedalen, 
 frikandelBroodje, dextro, cppBoek, iphone13ProMax, applePencil, iPadMini}
 // een enum gemaakt voor alle items die de speler in de game kan krijgen.
 
-enum playerClass {standard, uberNerd, linuxElite, macRichKid, netwerkBeheerder}
+enum PlayerClass {Standard, UberNerd, LinuxElite, MacRichKid, NetwerkBeheerder}
 
 public class Player
 {
@@ -22,9 +22,9 @@ public class Player
     private static int speed = 10;
     private static int stamina = 100;
     private static playerItem equippedWeapon;
-    public static playerClass pickedClass; // alleen voor testing op public. anders op private
+    public static PlayerClass pickedClass; // alleen voor testing op public. anders op private
     private static String playerName;
-    public playerClass tempClass = playerClass.standard; // alleen voor testing op public. anders op private
+    public PlayerClass tempClass = PlayerClass.Standard; // alleen voor testing op public. anders op private
     playerItem[] inventory = new playerItem[5];
 
     // constructor
@@ -64,7 +64,7 @@ public class Player
     {
         return equippedWeapon;
     }
-    public static playerClass getPickedClass()
+    public static PlayerClass getPickedClass()
     {
         return pickedClass;
     }
@@ -83,7 +83,7 @@ public class Player
         defencePower = 12;
         speed = 11;
         stamina = 80;
-        pickedClass = playerClass.uberNerd;
+        pickedClass = PlayerClass.UberNerd;
     }
     public static void chooseLinuxElite()
     {
@@ -92,7 +92,7 @@ public class Player
         defencePower = 8;
         speed = 12;
         stamina = 90;
-        pickedClass = playerClass.linuxElite;
+        pickedClass = PlayerClass.LinuxElite;
     }
     public static void chooseMacRichKid()
     {
@@ -101,7 +101,7 @@ public class Player
         defencePower = 14;
         speed = 10;
         stamina = 110;
-        pickedClass = playerClass.macRichKid;
+        pickedClass = PlayerClass.MacRichKid;
     }
     public static void chooseNetwerkBeheerder()
     {
@@ -110,7 +110,7 @@ public class Player
         defencePower = 10;
         speed = 10;
         stamina = 100;
-        pickedClass = playerClass.netwerkBeheerder;
+        pickedClass = PlayerClass.NetwerkBeheerder;
     }
 
 
