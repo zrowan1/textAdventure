@@ -5,7 +5,7 @@ package com.example.text;
 
 public class Enemy
 {
-    Enemy enemy;
+    Enemy tutorialEnemy = new Enemy(50, 5, 8, 10, 100, "De Vijand", Enemy.EnemyType.Leerling);
 
     protected enum EnemyType {Leraar, Leerling, Concierge};
 
@@ -34,17 +34,21 @@ public class Enemy
 
     // get methods
 
-    public int getHealth()
+    public static int getHealth()
     {
         return health;
     }
-    public int getAttackPower()
+    public static int getAttackPower()
     {
         return attackPower;
     }
     public static int getDefencePower()
     {
         return defencePower;
+    }
+    public static String getEnemyName()
+    {
+        return enemyName;
     }
 
 

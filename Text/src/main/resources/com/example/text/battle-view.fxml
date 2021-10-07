@@ -9,16 +9,16 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="chapterOneScene" prefHeight="550.0" prefWidth="700.0" style="-fx-background-color: #9BC9E9;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.text.TutorialController">
+<AnchorPane fx:id="chapterOneScene" prefHeight="550.0" prefWidth="700.0" style="-fx-background-color: #9BC9E9;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.text.BattleViewController">
    <children>
-      <Button fx:id="jaButton" mnemonicParsing="false" onMouseClicked="#clickJaButton" style="-fx-background-color: grey;" text="JA" textFill="WHITE" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="275.0" AnchorPane.rightAnchor="275.0">
+      <Text fx:id="enemyText" strokeType="OUTSIDE" strokeWidth="0.0" text="ENEMY" AnchorPane.bottomAnchor="450.0" AnchorPane.rightAnchor="308.0">
          <font>
-            <Font name="Fira Sans Regular" size="20.0" />
+            <Font size="24.0" />
          </font>
-      </Button>
-      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Wil je een voorbeeld gevecht spelen?" AnchorPane.rightAnchor="115.5" AnchorPane.topAnchor="68.0">
+      </Text>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="HP:" AnchorPane.bottomAnchor="450.0" AnchorPane.rightAnchor="100.0">
          <font>
-            <Font name="Comic Sans MS" size="25.0" />
+            <Font size="24.0" />
          </font>
       </Text>
       <MenuBar layoutY="7.0" style="-fx-background-color: grey;" AnchorPane.bottomAnchor="520.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -36,9 +36,9 @@
           </Menu>
         </menus>
       </MenuBar>
-      <Pane fx:id="statsPane" disable="true" layoutY="30.0" opacity="0.0" prefHeight="521.0" prefWidth="700.0" style="-fx-background-color: #9BC9E9;">
+      <Pane fx:id="statsPane" layoutY="30.0" opacity="0.0" prefHeight="521.0" prefWidth="700.0" style="-fx-background-color: #9BC9E9;">
          <children>
-            <Text layoutX="92.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Zie hier Jouw Super vette en sicke stats">
+            <Text layoutX="102.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Zie hier Jouw Super vette en sicke stats">
                <font>
                   <Font name="Comic Sans MS" size="26.0" />
                </font></Text>

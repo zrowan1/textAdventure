@@ -7,11 +7,13 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import java.util.Random;
 
 import java.io.IOException;
 
 public class GameController
 {
+
 
 
     @FXML
@@ -31,6 +33,9 @@ public class GameController
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("charactercreator-view.fxml"));
         Stage stage = (Stage) newGameButton.getScene().getWindow();
         stage.setScene(new Scene(fxmlLoader.load(), 700, 550 ));
+
+
+
     }
 
 }
