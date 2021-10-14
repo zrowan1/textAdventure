@@ -5,22 +5,20 @@ import java.util.Random;
 
 public class BattleSystem
 {
+    enum StartingPlayer {thePlayer, theEnemy};
 
-    Random randomizer = new Random();
+    private static Random randomizer = new Random();
 
 
     // instances
+    static boolean isPlayerDead = false;
+    static boolean isEnemyDead = false;
 
 
-    // constructor
-    public BattleSystem()
-    {
-
-    }
 
     // methods
 
-    public double determineDamagePlayer()
+    public static double determineDamagePlayer()
     {
         if (Player.getAttackPower() > Enemy.getDefencePower())
         {
@@ -35,7 +33,7 @@ public class BattleSystem
             return Math.round(Player.getAttackPower() * randomizer.nextDouble(0.70, 1.10));
         }
     }
-    public double determineDamageEnemy()
+    public static double determineDamageEnemy()
     {
         if (Enemy.getAttackPower() > Player.getDefencePower())
         {
@@ -50,6 +48,65 @@ public class BattleSystem
             return Math.round(Enemy.getAttackPower() * randomizer.nextDouble(0.70, 1));
         }
     }
+
+    public static StartingPlayer determineFirstAttacker()
+    {
+        if (Player.getSpeed() >= Enemy.getSpeed())
+        {
+            return StartingPlayer.thePlayer;
+        }
+        else
+        {
+            return StartingPlayer.theEnemy;
+        }
+    }
+
+    public static void playerAttack()
+    {
+        int newHealth = Enemy.getHealth() - (int)determineDamagePlayer();
+        Enemy.setHealth(newHealth);
+    }
+
+    public static void enemyAttack()
+    {
+        int newHealth = Player.getHealth() - (int)determineDamageEnemy();
+        Player.setHealth(newHealth);
+    }
+
+    public static void battleSkeleton()
+    {
+       determineFirstAttacker();
+       switch (determineFirstAttacker())
+       {
+           case thePlayer:
+               while (Player.getHealth() > 0 || Enemy.getHealth() > 0)
+               {
+                   determineDamagePlayer();
+                   playerAttack();
+                   determineDamageEnemy();
+                   enemyAttack();
+               }
+               break;
+           case theEnemy:
+               while (Player.getHealth() > 0 || Enemy.getHealth() > 0)
+               {
+                   determineDamageEnemy();
+                   enemyAttack();
+                   determineDamagePlayer();
+                   playerAttack();
+               }
+               break;
+       }
+       if (Player.getHealth() <= 0)
+       {
+           isPlayerDead = true;
+       }
+       else if (Enemy.getHealth() <= 0)
+       {
+           isEnemyDead = true;
+       }
+    }
+
 
 
 

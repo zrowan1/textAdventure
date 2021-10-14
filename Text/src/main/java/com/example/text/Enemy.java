@@ -5,8 +5,6 @@ package com.example.text;
 
 public class Enemy
 {
-    Enemy tutorialEnemy = new Enemy(50, 5, 8, 10, 100, "De Vijand", Enemy.EnemyType.Leerling);
-
     protected enum EnemyType {Leraar, Leerling, Concierge};
 
     // instances
@@ -15,8 +13,8 @@ public class Enemy
     private static int defencePower;
     private static int speed;
     private static int stamina;
-    private static String enemyName;
-    private static EnemyType enemyType;
+    private String enemyName;
+    private  EnemyType enemyType;
 
     // constructor
 
@@ -46,10 +44,23 @@ public class Enemy
     {
         return defencePower;
     }
-    public static String getEnemyName()
+    public static int getSpeed()
+    {
+        return Enemy.speed;
+    }
+    public String getEnemyName()
     {
         return enemyName;
     }
+
+
+    // set methods
+
+    public static void setHealth(int newHealth)
+    {
+        health = newHealth;
+    }
+
 
 
 

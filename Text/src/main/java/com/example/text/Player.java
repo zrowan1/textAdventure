@@ -69,6 +69,14 @@ public class Player
         return pickedClass;
     }
 
+    // set-methods
+
+    public static void setHealth(int newHealth)
+    {
+        health = newHealth;
+    }
+
+
     public static void setPlayerOne(String name)
     {
         Player playerOne = new Player(tempName);

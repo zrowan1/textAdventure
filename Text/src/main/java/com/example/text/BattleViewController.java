@@ -1,21 +1,25 @@
 package com.example.text;
 
 import javafx.event.ActionEvent;
+import javafx.event.Event;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.MenuItem;
+import javafx.scene.input.ContextMenuEvent;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 
 import java.io.IOException;
 
 public class BattleViewController
 {
-    static Enemy enemy;
     Player playerOne;
 
     public void showAllStats() {
@@ -39,10 +43,14 @@ public class BattleViewController
         Stage stage = (Stage) chapterOneScene.getScene().getWindow();
         stage.setScene(new Scene(fxmlLoader.load(), 700, 550));
     }
-    public static void setEnemyText()
+
+    public void setEnemyText()
     {
-        enemyText.setText(Enemy.getEnemyName());
+        Enemy tutorialEnemy = new Enemy(50, 7, 8, 7, 100, "De Enge Leraar", Enemy.EnemyType.Leraar);
+        enemyText.setText(tutorialEnemy.getEnemyName());
+        enemyHpText.setText(Integer.toString(tutorialEnemy.getHealth()));
     }
+
 
     @FXML
     protected AnchorPane chapterOneScene;
@@ -66,9 +74,8 @@ public class BattleViewController
     protected Text healthStatText;
     @FXML
     protected Button goBackButton;
-
     @FXML
-    protected static Text enemyText;
+    protected Text enemyText;
     @FXML
     protected Text enemyHpText;
 
@@ -93,6 +100,21 @@ public class BattleViewController
     {
         setBackToMainMenu();
     }
+
+    @FXML
+    private void showEnemy(MouseEvent event)
+    {
+        setEnemyText();
+    }
+
+    @FXML
+    public static void playerPressAttack(MouseEvent event)
+    {
+        BattleSystem.playerAttack();
+    }
+
+
+
 
 
 
