@@ -22,9 +22,9 @@ public class Player
     private static int speed = 10;
     private static int stamina = 100;
     private static playerItem equippedWeapon;
-    public static PlayerClass pickedClass; // alleen voor testing op public. anders op private
+    private static PlayerClass pickedClass; // alleen voor testing op public. anders op private
     private static String playerName;
-    public PlayerClass tempClass = PlayerClass.Standard; // alleen voor testing op public. anders op private
+    private PlayerClass tempClass = PlayerClass.Standard; // alleen voor testing op public. anders op private
     playerItem[] inventory = new playerItem[5];
 
     // constructor

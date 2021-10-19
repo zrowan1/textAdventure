@@ -9,9 +9,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="chapterOneScene" onMouseEntered="#showEnemy" onMouseExited="#showEnemy" onMouseMoved="#showEnemy" prefHeight="550.0" prefWidth="700.0" style="-fx-background-color: #9BC9E9;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.text.BattleViewController">
+<AnchorPane fx:id="chapterOneScene" onMouseEntered="#showEnemy" onMouseExited="#showEnemy" onMouseMoved="#showEnemy" prefHeight="550.0" prefWidth="700.0" style="-fx-background-color: #9BC9E9;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.text.BattleViewController">
    <children>
-      <Text fx:id="enemyText" strokeType="OUTSIDE" strokeWidth="0.0" text="ENEMY" AnchorPane.bottomAnchor="450.0" AnchorPane.rightAnchor="308.0">
+      <Text fx:id="enemyText" layoutX="200.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ENEMY" AnchorPane.bottomAnchor="450.0">
          <font>
             <Font size="24.0" />
          </font>
@@ -21,6 +21,20 @@
             <Font size="24.0" />
          </font>
       </Text>
+      <Text fx:id="whoWonText" layoutX="200" layoutY="220.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-text-alignment: center;" textOrigin="CENTER">
+         <font>
+            <Font size="20.0" />
+         </font></Text>
+      <Button fx:id="vluchtButton" layoutX="400.0" layoutY="400.0" mnemonicParsing="false" onMouseClicked="#pressVluchtButton" style="-fx-background-color: grey;" text="Vlucht" textFill="WHITE">
+         <font>
+            <Font name="Fira Sans Bold" size="25.0" />
+         </font>
+      </Button>
+      <Button fx:id="fightButton" layoutX="200.0" layoutY="400.0" mnemonicParsing="false" onMousePressed="#pressFightButton" style="-fx-background-color: grey;" text="Vecht" textFill="WHITE">
+         <font>
+            <Font name="Fira Sans Bold" size="25.0" />
+         </font>
+      </Button>
       <MenuBar layoutY="7.0" style="-fx-background-color: grey;" AnchorPane.bottomAnchor="520.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <menus>
           <Menu mnemonicParsing="false" text="Player">
@@ -36,7 +50,7 @@
           </Menu>
         </menus>
       </MenuBar>
-      <Pane fx:id="statsPane" layoutY="30.0" opacity="0.0" prefHeight="521.0" prefWidth="700.0" style="-fx-background-color: #9BC9E9;">
+      <Pane fx:id="statsPane" disable="true" layoutY="30.0" opacity="0.0" prefHeight="521.0" prefWidth="700.0" style="-fx-background-color: #9BC9E9;">
          <children>
             <Text layoutX="102.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Zie hier Jouw Super vette en sicke stats">
                <font>

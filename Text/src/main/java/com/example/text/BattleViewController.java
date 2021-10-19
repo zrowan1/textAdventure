@@ -18,17 +18,20 @@ import javafx.stage.WindowEvent;
 
 import java.io.IOException;
 
+
 public class BattleViewController
 {
     Player playerOne;
 
     public void showAllStats() {
+
+        statsPane.setDisable(false);
         statsPane.setOpacity(1.0);
-        attackStatText.setText("ATK = " + playerOne.getAttackPower());
-        defenceStatText.setText("DEF = " + playerOne.getDefencePower());
-        speedStatText.setText("SPD = " + playerOne.getSpeed());
-        staminaStatText.setText("STA = " + playerOne.getStamina());
-        healthStatText.setText("HP = " + playerOne.getHealth());
+        attackStatText.setText("ATK = " + Player.getAttackPower());
+        defenceStatText.setText("DEF = " + Player.getDefencePower());
+        speedStatText.setText("SPD = " + Player.getSpeed());
+        staminaStatText.setText("STA = " + Player.getStamina());
+        healthStatText.setText("HP = " + Player.getHealth());
 
     }
 
@@ -46,9 +49,10 @@ public class BattleViewController
 
     public void setEnemyText()
     {
-        Enemy tutorialEnemy = new Enemy(50, 7, 8, 7, 100, "De Enge Leraar", Enemy.EnemyType.Leraar);
+        Enemy tutorialEnemy = new Enemy(50, 7, 8, 15, 100, "De Enge Leraar", Enemy.EnemyType.Leraar);
         enemyText.setText(tutorialEnemy.getEnemyName());
         enemyHpText.setText(Integer.toString(tutorialEnemy.getHealth()));
+
     }
 
 
@@ -78,6 +82,14 @@ public class BattleViewController
     protected Text enemyText;
     @FXML
     protected Text enemyHpText;
+    @FXML
+    protected Button fightButton;
+    @FXML
+    protected Text whoWonText;
+    @FXML
+    protected Button vluchtButton;
+    @FXML
+    protected Text enemyStatsText;
 
     @FXML
     private void clickViewStatsItem(ActionEvent event)
@@ -89,6 +101,7 @@ public class BattleViewController
     {
 
         statsPane.setOpacity(0.0);
+        statsPane.setDisable(true);
     }
     @FXML
     public void clickQuitGameItem(ActionEvent event)
@@ -107,12 +120,32 @@ public class BattleViewController
         setEnemyText();
     }
 
+
     @FXML
-    public static void playerPressAttack(MouseEvent event)
+    private void pressFightButton(MouseEvent event)
     {
-        BattleSystem.playerAttack();
+        System.out.println(BattleSystem.isEnemyDead);
+        System.out.println(BattleSystem.isPlayerDead);
+        System.out.println(Player.getHealth());
+        System.out.println(Enemy.getHealth());
+        BattleSystem.battleSkeleton();
+
+        if (BattleSystem.isEnemyDead)
+        {
+            whoWonText.setText("Je hebt de vijand verslagen!");
+        }
+        else if (BattleSystem.isPlayerDead)
+        {
+            whoWonText.setText("Je bent verslagen.... LOSER!");
+        }
+
     }
 
+    @FXML
+    private void pressVluchtButton(MouseEvent event)
+    {
+        whoWonText.setText("Je kunt in de tutorial niet vluchten!\n Klik op de Fight knop om het gevecht te simuleren.");
+    }
 
 
 
